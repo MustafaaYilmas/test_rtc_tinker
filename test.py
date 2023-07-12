@@ -15,12 +15,12 @@ def get_time():
 
     seconds = bcd_to_int(data[0])
     minutes = bcd_to_int(data[1])
-    hours = bcd_to_int(data[2] & 0x3F)
+    hours = bcd_to_int(data[2] & 0x3F)  
     day = bcd_to_int(data[4])
     month = bcd_to_int(data[5])
     year = bcd_to_int(data[6])
 
-    print(f'{day}/{month}/20{year} {hours}:{minutes}:{seconds}')
+    print('%02d/%02d/20%02d %02d:%02d:%02d' % (day, month, year, hours, minutes, seconds))
 
 while True:
     get_time()
